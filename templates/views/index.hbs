@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="/img/weather.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    {{>header}}
+    <div>
+        <form action="/">
+            <div id='form-div'>
+                <div>
+                    <label for="address">Search:</label><br>
+                    <input type="text" id="input-address" name="address" placeholder="Location"><br><br>
+                </div>
+                <input id='submit-button' type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+    <div id="photo-div" style="display: flex; justify-content: space-evenly;">
+        <div>
+            <p id="location"></p>
+            <p id="temperature"></p>
+            <p id="time"></p>
+        </div>
+        <img id="photo" src=""></img>
+    </div>
+    {{>footer}}
+</body>
+<script src="scripts/index.js"></script>
+
+</html>
