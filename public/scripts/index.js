@@ -4,26 +4,26 @@ $('#photo').attr('src', 'https://www.abola.pt//img/fotos/ABOLA2015/NNH/jjbenfica
 
 $('form').on('submit', (e) => {
 
-    e.preventDefault();
+    e.preventDefault();   
 
-    var location = $('#input-address').val();
+    var location = $('#input-address');
 
     $('#location').text('Loading...');
     $('#summary').text('');
     $('#temperature').text('');
     $('#time').text('');
         
-    fetch('/weather?address=' + location).then(response => {
+    fetch('/weather?address=' + location.val()).then(response => {
+
+        location.val('');
 
         response.json().then(data => {
      
             if(data.error){
-                console.log(data.error);
                 $('#location').text(data.error);
             } else if (data.length == 0) {
                 $('#location').text(data.error);
             } else {
-                console.log(data);
                 $('#location').text(data.location);
                 $('#summary').text(data.summary);
                 $('#temperature').text(data.temperature + 'ºC');
@@ -36,3 +36,4 @@ $('form').on('submit', (e) => {
         $('#location').text(error);
     });
 });
+

@@ -51,7 +51,7 @@ app.get('/weather', (req, res) => { //PERCEBIDO!!   ONE PAGE MODE
             
             return error ? /*res.render('error', {error})*/res.send({error}) :
             //  res.render('weather', {location, temperature, time})
-            res.send({location, temperature, time, summary});
+            res.send({location, temperature, time, summary});   
         });
     });
 });

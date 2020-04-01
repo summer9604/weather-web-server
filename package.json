@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/app.js"
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js -e hbs,js",
+    "rep": "git push",
+    "server": "heroku push master"
   },
   "keywords": [],
   "author": "",
