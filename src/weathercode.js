@@ -13,6 +13,7 @@ var getWeather = ({latitude, longitude, location}, func) => {
             location: location,
             time: new Date(response.body.currently.time * 1000).toUTCString(),
             temperature: response.body.currently.temperature,
+            summary: response.body.currently.summary
         };
 
         func(error, info);

@@ -9,6 +9,7 @@ $('form').on('submit', (e) => {
     var location = $('#input-address').val();
 
     $('#location').text('Loading...');
+    $('#summary').text('');
     $('#temperature').text('');
     $('#time').text('');
         
@@ -24,6 +25,7 @@ $('form').on('submit', (e) => {
             } else {
                 console.log(data);
                 $('#location').text(data.location);
+                $('#summary').text(data.summary);
                 $('#temperature').text(data.temperature + 'ºC');
                 $('#time').text(data.time);
             }
