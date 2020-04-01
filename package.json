@@ -7,7 +7,7 @@
     "start": "node src/app.js",
     "dev": "nodemon src/app.js -e hbs,js",
     "rep": "git push",
-    "server": "heroku push master"
+    "server": "git push heroku master"
   },
   "keywords": [],
   "author": "",
