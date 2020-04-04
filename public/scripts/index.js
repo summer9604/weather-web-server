@@ -11,7 +11,7 @@ $('form').on('submit', (e) => {
     $('#time').text('');
     $('#nation-flag').attr('src', 'https://media0.giphy.com/media/tXL4FHPSnVJ0A/giphy.gif?cid=ecf05e4714223db933ff48ea74ac87d46eb0d627e56e685e&rid=giphy.gif');
         
-    fetch('http://localhost:3000/weather?address=' + location).then(response => {
+    fetch('/weather?address=' + location).then(response => {
 
         $('#input-address').val('');
 
