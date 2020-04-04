@@ -11,16 +11,12 @@ var getWeatherUpdates = (location, func) => {
         if (error) return func('Location service not available', response);
 
         if (response.body.features[0] == undefined) return func('Location not found (' + location + ')', response);
-
-        var short_code = response.body.features[0].context[0]['short_code'];
-
-        if (!short_code) short_code = 'pt'; // TA A CAUSAR TUMULTOS! NEM TODOS TEM O SHORT CODE NO MESMO SITIO WTF -.-
+        // TA A CAUSAR TUMULTOS! NEM TODOS TEM O SHORT CODE NO MESMO SITIO WTF -.-
 
         func(error, {
             latitude: response.body.features[0].center[1],
             longitude: response.body.features[0].center[0],
-            location: response.body.features[0]['place_name'],
-            short_code: short_code
+            location: response.body.features[0]['place_name']
         });
     });
 };

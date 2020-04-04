@@ -48,11 +48,11 @@ app.get('/weather', (req, res) => { //PERCEBIDO!!   ONE PAGE MODE
         // if (data == undefined) return res.render('error', {error});
         if (data == undefined) return res.send({error});
 
-        getWeather(data, (error, {location, temperature, time, short_code}) => {
+        getWeather(data, (error, {location, temperature, time}) => {
             
             return error ? /*res.render('error', {error})*/res.send({error}) :
             //  res.render('weather', {location, temperature, time})
-            res.send({location, temperature, time, short_code});
+            res.send({location, temperature, time});
         });
     });
 });

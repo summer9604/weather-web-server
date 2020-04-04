@@ -23,7 +23,7 @@ $('form').on('submit', (e) => {
                 $('#location').text(data.error);
                 $('#nation-flag').attr('src', '');
             } else {
-                $('#nation-flag').attr('src', 'https://www.countryflags.io/' + data['short_code'] + '/shiny/64.png');
+                $('#nation-flag').attr('src', 'https://www.countryflags.io/pt/shiny/64.png');
                 $('#location').text(data.location);
                 $('#temperature').text(data.temperature + 'ºC');
                 $('#time').text(data.time);
