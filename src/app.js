@@ -5,7 +5,7 @@ var hbs = require('hbs');
 var geocode = require('./geocode.js');
 var weathercode = require('./weathercode.js');
 
-var port = process.env.port || 3000;
+var port = process.env.PORT || 3000;
 
 var geocodeUpdates = geocode.getWeatherUpdates;
 var getWeather = weathercode.getWeather;
