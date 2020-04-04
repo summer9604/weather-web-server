@@ -17,7 +17,7 @@ $('form').on('submit', (e) => {
 
         response.json().then(data => {
             if(data.error){
-                console.log(data.error);
+                $('#location').text(data.error);
                 $('#nation-flag').attr('src', '');
             } else if (data.length == 0) {
                 $('#location').text(data.error);
