@@ -1,24 +1,39 @@
 body{
-    background-color: yellow;
+    background-color: yellow !important;
 }
 
 .cenas{
-    background-color: blue;
+    background-color: blue !important;
 }
 
-//index pag
+//index page    
 #form-div{
     display: flex; 
-    place-items: center;
+    width: 30%;
 }
 
-#photo-div{
-    margin: auto;
-    width: 90%;
+.align-image, p{
     text-align: center;
-    #photo{
+}
+
+@media only screen and (max-width: 1024px) {   
+    #form-div{
+        width: 80%;
+    }
+    #nation-flag{
         width: 60%;
     }
+  }
+
+#weather-info{
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+.centered-margin{
+    margin: 20px auto;
 }
 
 //partials
@@ -43,6 +58,8 @@ body{
     background-color: rgb(192, 126, 126);
     text-align: center;
     margin-bottom: 20px;
+    width: 95%;
+    margin: auto;
     #header-partial{
         width: max-content;
         color: yellow;

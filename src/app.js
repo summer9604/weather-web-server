@@ -1,7 +1,6 @@
 var express = require('express');
 var path = require('path');
 var app = express();
-var port = process.env.PORT || 3000;
 var hbs = require('hbs');
 var geocode = require('./geocode.js');
 var weathercode = require('./weathercode.js');
@@ -47,11 +46,11 @@ app.get('/weather', (req, res) => { //PERCEBIDO!!   ONE PAGE MODE
         // if (data == undefined) return res.render('error', {error});
         if (data == undefined) return res.send({error});
 
-        getWeather(data, (error, {location, temperature, time, summary}) => {
+        getWeather(data, (error, {location, temperature, time, short_code}) => {
             
             return error ? /*res.render('error', {error})*/res.send({error}) :
             //  res.render('weather', {location, temperature, time})
-            res.send({location, temperature, time, summary});   
+            res.send({location, temperature, time, short_code});
         });
     });
 });
@@ -68,6 +67,6 @@ app.get('*', (req, res) => {
     res.render('error', { error: 'Page not Found' })
 });
 
-app.listen(port, () => {
-    console.log('Server running on port ' + port);
+app.listen(3000, () => {
+    console.log('Server running on port 3000');
 });

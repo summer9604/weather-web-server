@@ -4,10 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/app.js",
-    "dev": "nodemon src/app.js -e hbs,js",
-    "rep": "git push",
-    "server": "git push heroku master"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
@@ -17,7 +14,6 @@
     "hbs": "^4.1.0",
     "jquery": "^3.4.1",
     "less": "^3.11.1",
-    "nodemon": "^2.0.2",
     "request": "^2.88.2"
   }
 }

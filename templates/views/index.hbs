@@ -2,8 +2,10 @@
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="/img/weather.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
@@ -11,23 +13,23 @@
     {{>header}}
     <div>
         <form action="/">
-            <div id='form-div'>
-                <div>
-                    <label for="address">Search:</label><br>
-                    <input type="text" id="input-address" name="address" placeholder="Location"><br><br>
+            <div class="input-group mb-3 centered-margin" id="form-div">
+                <input type="text" id="input-address" class="form-control" placeholder="Location" aria-label="Location"
+                    aria-describedby="button-addon2">
+                <div class="input-group-append">
+                    <button id="submit-button" class="btn btn-outline-secondary" type="submit"
+                        id="button-addon2">Procurar</button>
                 </div>
-                <input id='submit-button' type="submit" value="Submit">
             </div>
         </form>
     </div>
-    <div id="photo-div" style="display: flex; justify-content: space-evenly;">
-        <div>
+    <div id="weather-info">
+        <div class='centered-margin'>
+            <div class="align-image"><img id="nation-flag" src="" alt=""></div>
             <p id="location"></p>
-            <p id="summary"></p>
             <p id="temperature"></p>
             <p id="time"></p>
         </div>
-        <img id="photo" src=""></img>
     </div>
     {{>footer}}
 </body>
