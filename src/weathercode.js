@@ -1,6 +1,6 @@
 var request = require('request');
 
-var getWeather = ({latitude, longitude, location}, func) => {
+var getWeather = ({latitude, longitude, location, shortCode}, func) => {
 
     var urlWeather = 'https://api.darksky.net/forecast/e0d668365d3b49a1d1499499c9b122ff/' +
         latitude + ',' + longitude + '?units=si&lang=pt';
@@ -12,7 +12,8 @@ var getWeather = ({latitude, longitude, location}, func) => {
         var info = {
             location: location,
             time: new Date(response.body.currently.time * 1000).toUTCString(),
-            temperature: response.body.currently.temperature
+            temperature: response.body.currently.temperature,
+            shortCode
         };
 
         func(error, info);

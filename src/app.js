@@ -37,13 +37,13 @@ app.get('/weather', (req, res) => {
 
         if(error || !data) return res.send({ error });
         
-        getWeather(data, (error, { location, temperature, time }) => {
+        getWeather(data, (error, { location, temperature, time, shortCode }) => {
 
-            return error ? res.send({ error }) : res.send({ location, temperature, time });
+            return error ? res.send({ error }) : res.send({ location, temperature, time, shortCode });
         });
     });
 });
 
-app.get('*', (req, res) => res.render('error', { error: 'Page not Found' }));
+app.get('*', (req, res) => res.render('error', { pageTitle: 'Page not Found' }));
 
 app.listen(port, () => console.log('Server running on port 3000'));

@@ -1,7 +1,9 @@
 body {
   background-color: yellow !important;
 }
-
+#text {
+  font-size: medium;
+}
 #form-div {
   display: flex;
   width: 30%;
@@ -9,14 +11,6 @@ body {
 .align-image,
 p {
   text-align: center;
-}
-@media only screen and (max-width: 1024px) {
-  #form-div {
-    width: 80%;
-  }
-  #nation-flag {
-    width: 60%;
-  }
 }
 #weather-info {
   display: flex;
@@ -63,7 +57,6 @@ p {
   position: absolute;
   bottom: 0px;
   left: 0px;
-  height: 50px;
   width: 100%;
 }
 .footer #footer-partial {
@@ -80,4 +73,18 @@ p {
   color: brown;
   cursor: pointer;
   text-decoration: none;
+}
+.text-box {
+  margin: 5% 30% auto 30%;
+}
+@media only screen and (max-width: 1024px) {
+  #form-div {
+    width: 80%;
+  }
+  #nation-flag {
+    width: 60%;
+  }
+  .text-box {
+    margin: 15% 10% auto 10%;
+  }
 }

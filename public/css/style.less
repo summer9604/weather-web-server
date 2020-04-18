@@ -2,8 +2,8 @@ body{
     background-color: yellow !important;
 }
 
-.cenas{
-    background-color: blue !important;
+#text{
+    font-size:medium;
 }
 
 //index page    
@@ -15,15 +15,6 @@ body{
 .align-image, p{
     text-align: center;
 }
-
-@media only screen and (max-width: 1024px) {   
-    #form-div{
-        width: 80%;
-    }
-    #nation-flag{
-        width: 60%;
-    }
-  }
 
 #weather-info{
     display: flex; 
@@ -95,3 +86,20 @@ body{
     }
 }
 
+//ABOUT PAGE
+.text-box {
+    margin: 5% 30% auto 30%;
+  }
+
+//MEDIA QUERY
+  @media only screen and (max-width: 1024px) {   
+    #form-div{
+        width: 80%;
+    }
+    #nation-flag{
+        width: 60%;
+    }
+    .text-box {
+        margin: 15% 10% auto 10%;
+      }
+  }
