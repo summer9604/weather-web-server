@@ -1,37 +1,39 @@
-$('h1').on('click', () => $('body').toggleClass('cenas'));
+var infoPlaceholders = [$('#location'), $('#temperature'), $('#time')];
+var gif = 'https://media0.giphy.com/media/tXL4FHPSnVJ0A/giphy.gif?cid=ecf05e4714223db933ff48ea74ac87d46eb0d627e56e685e&rid=giphy.gif';
+var ptFlag = 'https://www.countryflags.io/pt/shiny/64.png';
+var location = $('#input-address').val();;
 
-$('form').on('submit', (e) => {
+$('form').on('submit', e => {
 
     e.preventDefault();
 
-    var location = $('#input-address').val();
+    loading();
 
-    $('#location').text('');
-    $('#temperature').text('');
-    $('#time').text('');
-    $('#nation-flag').attr('src', 'https://media0.giphy.com/media/tXL4FHPSnVJ0A/giphy.gif?cid=ecf05e4714223db933ff48ea74ac87d46eb0d627e56e685e&rid=giphy.gif');
-        
     fetch('/weather?address=' + location).then(response => {
 
-        $('#input-address').val('');
+        clearTextBox();
 
-        response.json().then(data => {
-            if(data.error){
-                $('#location').text(data.error);
-                $('#nation-flag').attr('src', '');
-            } else if (data.length == 0) {
-                $('#location').text(data.error);
-                $('#nation-flag').attr('src', '');
-            } else {
-                $('#nation-flag').attr('src', 'https://www.countryflags.io/pt/shiny/64.png');
-                $('#location').text(data.location);
-                $('#temperature').text(data.temperature + 'ºC');
-                $('#time').text(data.time);
-            }
-        }).catch((error) => {
-            $('#location').text(error);
-        });
-    }).catch((error) => {
-        $('#location').text(error);
+        response.json().then(data => data.error || data.length == 0 ? renderError(data) : renderInfo(data))
+            .catch(error => $('#location').text(error))
+            .catch(error => $('#location').text(error));
     });
 });
+
+var loading = () => {
+    $('#nation-flag').attr('src', gif);
+    infoPlaceholders.forEach(info => info.text(''));
+};
+
+var clearTextBox = () => locationInput.val('');
+
+var renderError = data => {
+    $('#location').text(data.error);
+    $('#nation-flag').attr('src', '');
+};
+
+var renderInfo = data => {
+    $('#nation-flag').attr('src', ptFlag);
+    $('#location').text(data.location);
+    $('#temperature').text(data.temperature + 'ºC');
+    $('#time').text(data.time);
+};
