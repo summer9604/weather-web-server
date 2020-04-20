@@ -1,7 +1,7 @@
 body {
   background-color: yellow !important;
 }
-#text {
+.text {
   font-size: medium;
 }
 #form-div {
@@ -9,7 +9,8 @@ body {
   width: 30%;
 }
 .align-image,
-p {
+p,
+#source-code {
   text-align: center;
 }
 #weather-info {
@@ -64,18 +65,9 @@ p {
   color: white;
   margin-right: 10px;
 }
-#error-div {
-  width: fit-content;
-  margin: auto;
-  text-align: center;
-}
-#error-div #homepage-redirect {
-  color: brown;
-  cursor: pointer;
-  text-decoration: none;
-}
 .text-box {
   margin: 5% 30% auto 30%;
+  text-align: center;
 }
 @media only screen and (max-width: 1024px) {
   #form-div {
